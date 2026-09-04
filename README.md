@@ -1,11 +1,6 @@
-comando para roda migrate
-
-criar migrate
-npx sequelize-cli migration:generate --name create-farms
-
 # Brain Agriculture - Back-End API (Teste Técnico)
 
-Este é o repositório da API REST (Back-End) desenvolvida para o teste técnico da **Brain Agriculture**. A aplicação gerencia de forma robusta e persistente todas as regras de negócio de produtores rurais, propriedades e culturas agrícolas através de um banco de dados relacional isolado.
+Este é o repositório da API REST (Back-End) desenvolvida para o teste técnico da **Brain Agriculture** pelo deswenvovedor **Tiago Honorio**. A aplicação gerencia e persistente todas as regras de negócio exigidas no teste para produtores rurais, propriedades e culturas agrícolas através de um banco de dados relacional isolado.
 
 ## 🚀 Objetivo do Projeto
 
@@ -31,7 +26,7 @@ O objetivo principal deste projeto é fornecer uma API escalável e blindada con
 
 ## 📂 Organização Arquitetural de Diretórios
 
-O projeto foi refatorado adotando uma estrutura modular limpa baseada em domínios de negócio:
+O projeto foi refatorado adotando uma estrutura modular:
 
 ```text
 src/
