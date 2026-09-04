@@ -1,5 +1,5 @@
 comando para roda migrate
-docker exec -it brain_nestjs_api npx sequelize-cli db:migrate
+
 criar migrate
 npx sequelize-cli migration:generate --name create-farms
 
@@ -63,6 +63,12 @@ Certifique-se de que o Docker esteja ativo na sua máquina. Execute o comando ab
 docker compose up --build
 ```
 *Nota: O contêiner está configurado para executar as migrações (`npx sequelize-cli db:migrate`) de forma automática antes do NestJS subir, garantindo a criação das tabelas estruturais de forma instantânea.*
+
+### 3. Executar migração manual
+```bash
+docker exec -it brain_nestjs_api npx sequelize-cli db:migrate
+```
+*Nota: Caso no build não criar banco de dados e tabelas execute comando acima.*
 
 ---
 
