@@ -1,6 +1,6 @@
 import { Table, Column, Model, DataType, ForeignKey, BelongsTo, HasMany } from 'sequelize-typescript';
-import { RuralProducer } from 'src/rural-producers/entities/rural-producer.entity';
-import { FarmCrop } from 'src/farm-crops/entities/farm-crop.entity'; 
+import { RuralProducer } from 'src/modules/rural-producers/entities/rural-producer.entity';
+import { FarmCrop } from 'src/modules/farm-crops/entities/farm-crop.entity';
 
 @Table({ tableName: 'farms', underscored: true })
 export class Farm extends Model<Farm> {

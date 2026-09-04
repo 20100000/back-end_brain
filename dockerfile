@@ -9,4 +9,6 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["npm", "run", "start:dev"]
+CMD npx sequelize-cli db:migrate && npm run start:dev
+
+# CMD ["npm", "run", "start:dev"]

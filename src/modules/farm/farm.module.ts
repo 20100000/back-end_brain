@@ -3,8 +3,8 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { FarmService } from './farm.service';
 import { FarmController } from './farm.controller';
 import { Farm } from './entities/farm.entity';
-import { RuralProducer } from 'src/rural-producers/entities/rural-producer.entity';
-import { FarmCrop } from 'src/farm-crops/entities/farm-crop.entity';
+import { RuralProducer } from 'src/modules/rural-producers/entities/rural-producer.entity';
+import { FarmCrop } from 'src/modules/farm-crops/entities/farm-crop.entity';
 
 @Module({
   imports: [SequelizeModule.forFeature([Farm, RuralProducer, FarmCrop])],

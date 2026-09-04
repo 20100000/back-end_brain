@@ -1,7 +1,7 @@
 import { Injectable, BadRequestException, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Farm } from './entities/farm.entity';
-import { FarmCrop } from 'src/farm-crops/entities/farm-crop.entity';
+import { FarmCrop } from 'src/modules/farm-crops/entities/farm-crop.entity';
 import { RuralProducer } from '../rural-producers/entities/rural-producer.entity';
 import { CreateFarmDto } from './dto/create-farm.dto';
 import { UpdateFarmDto } from './dto/update-farm.dto';
@@ -153,7 +153,7 @@ export class FarmService {
   }
 
   async getGroupByCrop(): Promise<{ crop_name: string; count: number }[]> {
-    const result = await FarmCrop.findAll({
+    const result = await this.farmCropModel.findAll({
       attributes: [
         'crop_name',
         [Sequelize.fn('COUNT', Sequelize.col('id')), 'count'],

@@ -1,8 +1,8 @@
 import { Injectable, ConflictException, BadRequestException, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { RuralProducer } from './entities/rural-producer.entity';
-import { Farm } from 'src/farm/entities/farm.entity';
-import { FarmCrop } from 'src/farm-crops/entities/farm-crop.entity';
+import { Farm } from 'src/modules/farm/entities/farm.entity';
+import { FarmCrop } from 'src/modules/farm-crops/entities/farm-crop.entity';
 import { CreateRuralProducerDto } from './dto/create-rural-producer.dto';
 import { UpdateRuralProducerDto } from './dto/update-rural-producer.dto';
 import { validateCpf } from 'src/utils/validate-cpf';

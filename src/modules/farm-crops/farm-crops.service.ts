@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { FarmCrop } from './entities/farm-crop.entity';
-import { Farm } from 'src/farm/entities/farm.entity';
+import { Farm } from 'src/modules/farm/entities/farm.entity';
 import { CreateFarmCropDto } from './dto/create-farm-crop.dto';
 import { UpdateFarmCropDto } from './dto/update-farm-crop.dto';
 

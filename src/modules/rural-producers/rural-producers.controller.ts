@@ -4,7 +4,7 @@ import { CreateRuralProducerDto } from './dto/create-rural-producer.dto';
 import { UpdateRuralProducerDto } from './dto/update-rural-producer.dto';
 import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags('Rural Producers') // Organiza as rotas dentro do Swagger
+@ApiTags('Rural Producers')
 @Controller('rural-producers')
 export class RuralProducersController {
   constructor(private readonly ruralProducersService: RuralProducersService) {}

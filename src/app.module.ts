@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { RuralProducersModule } from './rural-producers/rural-producers.module';
-import { FarmModule } from './farm/farm.module';
-import { FarmCropsModule } from './farm-crops/farm-crops.module';
+import { RuralProducersModule } from './modules/rural-producers/rural-producers.module';
+import { FarmModule } from './modules/farm/farm.module';
+import { FarmCropsModule } from './modules/farm-crops/farm-crops.module';
 
 @Module({
   imports: [
