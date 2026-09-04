@@ -3,7 +3,7 @@ docker exec -it brain_nestjs_api npx sequelize-cli db:migrate
 criar migrate
 npx sequelize-cli migration:generate --name create-farms
 
-# Brain Agriculture - Back-End API (Teste Técnico v2)
+# Brain Agriculture - Back-End API (Teste Técnico)
 
 Este é o repositório da API REST (Back-End) desenvolvida para o teste técnico da **Brain Agriculture**. A aplicação gerencia de forma robusta e persistente todas as regras de negócio de produtores rurais, propriedades e culturas agrícolas através de um banco de dados relacional isolado.
 
@@ -53,7 +53,7 @@ src/
 ### 1. Clonar o Repositório
 Abra o seu terminal e clone a pasta do projeto back-end:
 ```bash
-git clone https://github.com
+git clone https://github.com/20100000/back-end_brain.git
 cd back-end-brain
 ```
 
@@ -63,7 +63,9 @@ Certifique-se de que o Docker esteja ativo na sua máquina. Execute o comando ab
 docker compose up --build
 ```
 *Nota: O contêiner está configurado para executar as migrações (`npx sequelize-cli db:migrate`) de forma automática antes do NestJS subir, garantindo a criação das tabelas estruturais de forma instantânea.*
-
+3. **Executar as Migrations Manualmente:**
+   ```bash
+   docker exec -it brain_nestjs_api npx sequelize-cli db:migrate
 ---
 
 ## 🌐 Como Acessar a Documentação Interativa (Swagger)
