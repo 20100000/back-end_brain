@@ -1,4 +1,4 @@
-# Brain Agriculture - Back-End API (Teste Técnico)
+# Brain - Back-End API (Teste Técnico)
 
 Este é o repositório da API REST (Back-End) desenvolvida para o teste técnico da **Brain Agriculture** pelo deswenvovedor **Tiago Honorio**. A aplicação gerencia e persistente todas as regras de negócio exigidas no teste para produtores rurais, propriedades e culturas agrícolas através de um banco de dados relacional isolado.
 
