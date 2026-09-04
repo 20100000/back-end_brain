@@ -64,9 +64,6 @@ docker compose up --build
 ```
 *Nota: O contêiner está configurado para executar as migrações (`npx sequelize-cli db:migrate`) de forma automática antes do NestJS subir, garantindo a criação das tabelas estruturais de forma instantânea.*
 
-### 3. **Executar as Migrations Manualmente:**
-   ```bash
-   docker exec -it brain_nestjs_api npx sequelize-cli db:migrate
 ---
 
 ## 🌐 Como Acessar a Documentação Interativa (Swagger)
