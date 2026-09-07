@@ -51,15 +51,7 @@ Abra o seu terminal e clone a pasta do projeto back-end:
 git clone https://github.com/20100000/back-end_brain.git
 cd back-end_brain
 ```
-
-### 2. Iniciar os Containers (Banco + API)
-Certifique-se de que o Docker esteja ativo na sua máquina. Execute o comando abaixo para construir a imagem, baixar o PostgreSQL, configurar as variáveis de ambiente estruturadas e levantar a aplicação:
-```bash
-docker compose up --build
-```
-*Nota: O contêiner está configurado para executar as migrações (`npx sequelize-cli db:migrate`) de forma automática antes do NestJS subir, garantindo a criação das tabelas estruturais de forma instantânea.*
-
-### 3. Editar arquivo .envExample para .env ou criar um .env
+### 2. Editar arquivo .envExample para .env ou criar um .env
 ```bash
 PORT=3000
 DB_DIALECT=postgres
@@ -70,6 +62,13 @@ DB_PASS=tiago@123
 DB_NAME=brain
 ```
 *Nota: Usar dados acima para conexão com Database.*
+
+### 3. Iniciar os Containers (Banco + API)
+Certifique-se de que o Docker esteja ativo na sua máquina. Execute o comando abaixo para construir a imagem, baixar o PostgreSQL, configurar as variáveis de ambiente estruturadas e levantar a aplicação:
+```bash
+docker compose up --build
+```
+*Nota: O contêiner está configurado para executar as migrações (`npx sequelize-cli db:migrate`) de forma automática antes do NestJS subir, garantindo a criação das tabelas estruturais de forma instantânea.*
 
 ### 4. Executar migração manual
 ```bash
