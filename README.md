@@ -1,6 +1,6 @@
 # Brain - Back-End API (Teste Técnico)
 
-Este é o repositório da API REST (Back-End) desenvolvida para o teste técnico da **Brain Agriculture** pelo desenvolvedor **Tiago Honorio**. A aplicação gerencia e persistente todas as regras de negócio exigidas no teste para produtores rurais, propriedades e culturas agrícolas através de um banco de dados relacional isolado.
+Este é o repositório da API REST (Back-End) desenvolvida para o teste técnico da **Brain** pelo desenvolvedor **Tiago Honorio**. A aplicação gerencia e persistente todas as regras de negócio exigidas no teste para produtores rurais, propriedades e culturas agrícolas através de um banco de dados relacional isolado.
 
 ## 🚀 Objetivo do Projeto
 
@@ -89,6 +89,21 @@ docker exec -it brain_nestjs_api npx jest modules/tests
 ```
 
 ---
+---
+
+## 🤖 Esteira de Integração Contínua (CI) & Políticas de Merge
+
+Para garantir a estabilidade do ecossistema e impedir que códigos que violem as regras de negócio entrem no histórico principal, o repositório conta com uma pipeline automatizada via **GitHub Actions** (`.github/workflows/ci.yml`).
+
+### 🔒 Critérios Obrigatórios para Realizar Merge (`dev` → `main`)
+A branch `main` está protegida contra commits diretos. Qualquer alteração ou nova funcionalidade desenvolvida na branch `dev` só poderá ser integrada à branch principal se cumprir rigorosamente as seguintes etapas:
+
+1. **Abertura de Pull Request (PR):** Toda integração de código deve ser feita obrigatoriamente abrindo um Pull Request direcionado à branch `main`.
+2. **Execução Automatizada da Suíte (Jest):** Assim que o PR é aberto, o GitHub Actions dispara um servidor temporário e executa automaticamente o comando `npm run test` em nuvem.
+3. **Status Check Obrigatório:** O botão de **Merge** ficará bloqueado em vermelho caso qualquer um dos testes unitários (como a validação matemática de hectares ou os algoritmos de CPF/CNPJ) falhe. A esteira precisa retornar com sucesso (status verde) para liberar a ramificação.
+
+---
+
 
 ## 💻 Integração com o Front-End
 
