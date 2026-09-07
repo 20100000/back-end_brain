@@ -14,6 +14,9 @@ export class FarmCrop extends Model<FarmCrop> {
     @ForeignKey(() => Farm)
     @Column({ type: DataType.INTEGER, allowNull: false })
     farm_id: number;
+
+    @Column({ type: DataType.INTEGER, allowNull: false })
+    harvest: number;
   
     @BelongsTo(() => Farm)
     farm: Farm;

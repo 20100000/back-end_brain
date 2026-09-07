@@ -17,4 +17,12 @@ export class CreateFarmCropDto {
   @IsString()
   @IsNotEmpty()
   crop_name: string;
+
+  @ApiProperty({
+    example: 2026,
+    description: 'Ano da safra correspondente ao plantio desta cultura'
+  })
+  @IsNumber()
+  @IsNotEmpty()
+  harvest: number;
 }

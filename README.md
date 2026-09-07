@@ -1,6 +1,6 @@
 # Brain - Back-End API (Teste Técnico)
 
-Este é o repositório da API REST (Back-End) desenvolvida para o teste técnico da **Brain Agriculture** pelo deswenvovedor **Tiago Honorio**. A aplicação gerencia e persistente todas as regras de negócio exigidas no teste para produtores rurais, propriedades e culturas agrícolas através de um banco de dados relacional isolado.
+Este é o repositório da API REST (Back-End) desenvolvida para o teste técnico da **Brain Agriculture** pelo desenvolvedor **Tiago Honorio**. A aplicação gerencia e persistente todas as regras de negócio exigidas no teste para produtores rurais, propriedades e culturas agrícolas através de um banco de dados relacional isolado.
 
 ## 🚀 Objetivo do Projeto
 
@@ -23,7 +23,7 @@ O objetivo principal deste projeto é fornecer uma API escalável e blindada con
 - **Docker & Docker Compose:** Containerização e orquestração completa da esteira de infraestrutura.
 
 ---
-
+   v        
 ## 📂 Organização Arquitetural de Diretórios
 
 O projeto foi refatorado adotando uma estrutura modular:
@@ -49,7 +49,7 @@ src/
 Abra o seu terminal e clone a pasta do projeto back-end:
 ```bash
 git clone https://github.com/20100000/back-end_brain.git
-cd back-end-brain
+cd back-end_brain
 ```
 
 ### 2. Iniciar os Containers (Banco + API)

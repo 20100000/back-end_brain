@@ -86,7 +86,6 @@ describe('FarmService', () => {
         total_farm_area: 100,
         arable_area: 80,
         vegetation_area: 30,
-        harvest: 2026,
       };
       await expect(service.create(dto)).rejects.toThrow(BadRequestException);
     });
