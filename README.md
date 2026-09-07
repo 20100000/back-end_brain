@@ -5,10 +5,10 @@ Este é o repositório da API REST (Back-End) desenvolvida para o teste técnico
 ## 🚀 Objetivo do Projeto
 
 O objetivo principal deste projeto é fornecer uma API escalável e blindada contra falhas para suportar a operação do ecossistema agrícola da Brain Agriculture, atendendo aos seguintes critérios:
-- **Modelo Relacional Correto:** Banco estruturado em 3 tabelas independentes (`rural_producers`, `farms` e `farm_crops`) eliminando colunas multivaloradas de safras e cultivos.
+- **Modelo Relacional:** Banco estruturado em 3 tabelas independentes (`rural_producers`, `farms` e `farm_crops`) eliminando colunas multivaloradas de safras e cultivos.
 - **Validações de Domínio Estritas:** Algoritmos matemáticos de higienização e validação de dígitos verificadores de CPF e CNPJ integrados aos DTOs.
 - **Segurança de Negócio:** Validação matemática impeditiva que bloqueia inserções ou atualizações onde a soma das áreas aráveis e de vegetação nativa exceda a área total da fazenda.
-- **Endpoints de Inteligência:** Rotas analíticas e agregadas otimizadas com comandos nativos do PostgreSQL (`COUNT`, `SUM` e `GROUP BY`) para alimentar os gráficos de pizza e indicadores do Front-End.
+- **Endpoints para gráficos:** Rotas analíticas e agregadas otimizadas com comandos nativos do PostgreSQL (`COUNT`, `SUM` e `GROUP BY`) para alimentar os gráficos de pizza e indicadores do Front-End.
 
 ---
 
