@@ -33,11 +33,12 @@ export class FarmService {
     const farm = await this.farmModel.create(createFarmDto as any);
 
     if (initial_crops && initial_crops.length > 0) {
-      const cropsData = initial_crops.map((cropName) => ({
+      const cropsData = initial_crops.map((item: any) => ({
         farm_id: farm.id,
-        crop_name: cropName.toUpperCase(),
+        crop_name: item.crop_name.toUpperCase(),
+        harvest: Number(item.harvest),
       }));
-      
+
       await this.farmCropModel.bulkCreate(cropsData);
     }
 
@@ -46,13 +47,12 @@ export class FarmService {
 
   async update(id: number, updateFarmDto: UpdateFarmDto): Promise<Farm> {
     const farm = await this.findOne(id);
-
     const { crops, ...farmData } = updateFarmDto;
 
     if (farmData.producer_id !== undefined) {
       const newProducerExists = await this.ruralProducerModel.findByPk(farmData.producer_id);
       if (!newProducerExists) {
-        throw new NotFoundException(`Não é possível transferir a fazenda. O novo produtor de ID ${farmData.producer_id} não existe.`);
+        throw new NotFoundException(`O produtor de ID ${farmData.producer_id} não existe.`);
       }
     }
 
@@ -61,7 +61,6 @@ export class FarmService {
     const vegetationArea = farmData.vegetation_area !== undefined ? farmData.vegetation_area : farm.vegetation_area;
 
     this.validateFarmAreas(totalArea, arableArea, vegetationArea);
-
     await farm.update(farmData);
 
     if (crops && crops.length > 0) {
@@ -70,15 +69,18 @@ export class FarmService {
           const existingCrop = await this.farmCropModel.findOne({
             where: { id: cropItem.id, farm_id: farm.id }
           });
-          
-          if (existingCrop && cropItem.crop_name) {
-            await existingCrop.update({ crop_name: cropItem.crop_name.toUpperCase() });
+          if (existingCrop) {
+            await existingCrop.update({
+              crop_name: cropItem.crop_name ? cropItem.crop_name.toUpperCase() : existingCrop.crop_name,
+              harvest: cropItem.harvest !== undefined ? Number(cropItem.harvest) : existingCrop.harvest // 👉 Atualiza a safra se enviada
+            });
           }
         } else {
           if (cropItem.crop_name) {
             await this.farmCropModel.create({
               farm_id: farm.id,
-              crop_name: cropItem.crop_name.toUpperCase()
+              crop_name: cropItem.crop_name.toUpperCase(),
+              harvest: Number(cropItem.harvest || new Date().getFullYear()) // 👉 Cria a cultura com sua safra
             } as any);
           }
         }

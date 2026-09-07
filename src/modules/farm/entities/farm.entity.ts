@@ -37,9 +37,6 @@ export class Farm extends Model<Farm> {
     @Column({ type: DataType.DECIMAL(10, 2), allowNull: false })
     vegetation_area: number;
   
-    @Column({ type: DataType.INTEGER, allowNull: false })
-    harvest: number;
-  
     @HasMany(() => FarmCrop)
     crops: FarmCrop[];
 }

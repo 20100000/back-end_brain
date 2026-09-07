@@ -38,11 +38,6 @@ export class CreateFarmDto {
   @Min(0)
   vegetation_area: number;
 
-  @ApiProperty({ example: 2026, description: 'Ano da safra correspondente' })
-  @IsNumber()
-  @IsNotEmpty()
-  harvest: number;
-
   @ApiPropertyOptional({ 
     example: ['Soja', 'Milho'], 
     description: 'Lista de culturas plantadas nesta fazenda',

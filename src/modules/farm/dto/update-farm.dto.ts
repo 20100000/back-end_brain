@@ -12,6 +12,11 @@ class UpdateFarmCropItemDto {
   @IsString()
   @IsOptional()
   crop_name?: string;
+
+  @ApiPropertyOptional({ example: 2026 })
+  @IsNumber()
+  @IsOptional()
+  harvest?: number;
 }
 
 export class UpdateFarmDto {
@@ -52,11 +57,6 @@ export class UpdateFarmDto {
   @Min(0)
   @IsOptional()
   vegetation_area?: number;
-
-  @ApiPropertyOptional({ example: 2027 })
-  @IsNumber()
-  @IsOptional()
-  harvest?: number;
 
   @ApiPropertyOptional({ 
     type: [UpdateFarmCropItemDto],
