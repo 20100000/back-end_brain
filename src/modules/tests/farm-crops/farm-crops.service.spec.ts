@@ -13,6 +13,7 @@ describe('FarmCropsService', () => {
     id: 1,
     farm_id: 1,
     crop_name: 'SOJA',
+    harvest: 2026,
     destroy: jest.fn().mockResolvedValue(true),
   };
 
@@ -43,7 +44,7 @@ describe('FarmCropsService', () => {
   describe('create (POST)', () => {
     it('deve falhar se a fazenda não existir', async () => {
       jest.spyOn(farmModel, 'findByPk').mockResolvedValueOnce(null);
-      const dto = { farm_id: 999, crop_name: 'SOJA' };
+      const dto = { farm_id: 999, crop_name: 'SOJA', harvest: 2026 };
       await expect(service.create(dto)).rejects.toThrow(NotFoundException);
     });
   });
