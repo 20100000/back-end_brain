@@ -23,7 +23,7 @@ O objetivo principal deste projeto é fornecer uma API escalável e blindada con
 - **Docker & Docker Compose:** Containerização e orquestração completa da esteira de infraestrutura.
 
 ---
-   v        
+
 ## 📂 Organização Arquitetural de Diretórios
 
 O projeto foi refatorado adotando uma estrutura modular:
