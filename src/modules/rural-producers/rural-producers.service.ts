@@ -39,6 +39,7 @@ export class RuralProducersService {
       } as any);
     } catch (error) {
       if (error.name === 'SequelizeUniqueConstraintError') {
+        this.logger.error('CPF/CNPJ já cadastrado.', error);
         throw new ConflictException('Já existe um produtor cadastrado com este CPF/CNPJ.');
       }
 
